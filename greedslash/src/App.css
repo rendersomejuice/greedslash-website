@@ -90,13 +90,23 @@ body::before {
   }
 }
 
-.quill{
+.tiptap-editor-container{
   width: 80%;
   margin: 0 auto;
   margin-top: 20px;
   background: white;
+  min-height: 300px;
 }
-.ql-container{
+
+.editor-toolbar{
+  display: flex;
+  gap: 5px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.ProseMirror{
   min-height: 300px;
 }
 
@@ -110,4 +120,22 @@ h2{
   color: white;
   width: 80%;
   margin: 0 auto;
+}
+
+.PostContainer{
+  width: 80%;
+  margin: 0 auto;
+  background: grey;
+  padding: 20px;
+}
+
+.PostDate{
+  border-top: solid 1px;
+  margin-top: 40px;
+  display: block;
+  padding: 5px;
+}
+
+iframe{
+  border: none;
 }
