@@ -1,0 +1,161 @@
+.headerLogo{
+    height: auto;
+    width: 750px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: -50px;
+    margin-top: -50px;
+    z-index: -1;
+    position: relative;
+}
+.Itrailer{
+    margin: 0 auto 20px;
+    display: block;
+}
+.wishListButton{
+    background: linear-gradient(90deg, #3fae3f, #1d9847);
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 7px 7px 0 black;
+    border: solid 4px black;
+    text-shadow: 0.3px 0.3px 0.3px #161616;
+}
+
+.horizontalLayout{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    gap:20px;
+}
+.textBox{
+    width: 48%;
+    margin: 0 auto;
+    display: block;
+    color: #f9ffea;
+    margin-bottom: 50px;
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 30px;
+}
+.MechanicContainer{
+    width: 600px;
+    margin: 0 auto;
+}
+.panelContainer{
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 50px;
+}
+.mechanicShortDescription{
+    position: absolute;
+    top: 86%;
+    left: 5%;
+    transform: translate(-5%, 10%);
+    text-align: left;
+}
+.footer{
+    text-decoration: none;
+}
+.socials{
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.social{
+    color: white;
+}
+
+.characterContainer{
+    width: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background: #3b5347;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 7px 7px 0 black;
+    border: solid 3px black;
+    border-top-right-radius: 45px;
+}
+.characterImg{
+    width: 100%;
+}
+
+.characterScreen{
+    background: linear-gradient(36deg, black, #514f4f);
+    width: 80%;
+    margin: 0 auto;
+    border: solid 3px black;
+    height: 80%;
+    overflow: hidden;
+}
+
+.charName{
+    position: relative;
+    font-family: "segment14", opentype;
+    color: #d9ff00;
+    right: -5%;
+}
+
+.charAttr{
+    font-family: "segment14", opentype;
+    color: #d9ff00;
+}
+
+.charAttrLeft{
+    right: -4%;
+}
+.charAttrRight{
+    left: -4%;
+}
+
+.attrContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -90px;
+    padding: 10px;
+}
+
+.characterButtonsContainer{
+    position: absolute;
+    transform: translate(280px, 10px);
+    display: grid;
+    gap: 4px;
+    color: white;
+}
+
+.characterButton{
+    all: unset;
+    cursor: pointer;
+    padding: 20px;
+    border: solid 3px black;
+    width: 100px;
+    text-align: center;
+    background: #276746;
+    box-shadow: 7px 7px 0 black;
+}
+
+.NavbarContainer{
+    width: 100%;
+    background: #ae9e00;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+.NavbarContainer > div{
+    width: 200px;   
+    text-align: center;
+}
+
+.NavbarContainer > div > a {
+    text-decoration: none;
+    color: black;
+}

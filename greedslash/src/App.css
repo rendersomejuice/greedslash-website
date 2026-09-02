@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+  font-family: 'shlop';
+  src: url('/shlop.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'segment14';
+  src: url('/Segment14.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background-color: rgb(30, 30, 30);
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  
+  background-image: url("/hell.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+  
+  opacity: 0.2; 
+}
+
+.titleContainer > h1{
+  font-family: "shlop", opentype;
+  text-align: center;
+  color: #ec1f1f;
+  font-size: 5em;
+  text-shadow: 5px 5px 1px black;
+}
+
+.ClockContainer > h1{
+  font-family: "segment14", opentype;
+  text-align: center;
+  color: #d9ff00;
+  margin: 50px;
+}
+
+.MechanicContainer{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+}
+
+.MechanicContainer > h1{
+  text-align: center;
+  position:relative;
+  background: linear-gradient(90deg,transparent, #a86abd, transparent);
+  width: 600px;
+  margin: 0 auto;
+}
+
+.MechanicContainer > div > img{
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+.AnimationMech{
+  Animation:animation 0.5s ease-in-out forwards;
+}
+
+@keyframes animation{
+  0%{
+    color : white;
+  }
+  100%{
+    color : red;
+  }
+}
+
+.quill{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: white;
+}
+.ql-container{
+  min-height: 300px;
+}
+
+.title-input{
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+h2{
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+}
