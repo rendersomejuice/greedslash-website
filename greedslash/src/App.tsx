@@ -1,6 +1,6 @@
 import './App.css'
-import Index from './Index.tsx'
-import Devlog from './Devlog.tsx'
+import Index from './pages/Index.tsx'
+import Devlog from './pages/Devlog.tsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AdminPanel from './AdminPanel.tsx'
 

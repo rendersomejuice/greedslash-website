@@ -1,8 +1,8 @@
-import './App.css'
-import Footer from './components/Footer.tsx'
-import Navbar from './components/Navbar.tsx'
+import '../App.css'
+import Footer from '../components/Footer.tsx'
+import Navbar from '../components/Navbar.tsx'
 
-import style from './style.module.css'
+import style from '../style.module.css'
 
 function Devlog() {
 

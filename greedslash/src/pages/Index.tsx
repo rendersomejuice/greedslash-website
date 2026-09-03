@@ -1,13 +1,13 @@
-import './App.css'
-import Header from './components/Header.tsx'
-import Mechanics from './components/Mechanics.tsx'
-import Footer from './components/Footer.tsx'
-import Characters from './components/Characters.tsx'
-import Navbar from './components/Navbar.tsx'
+import '../App.css'
+import Header from '../components/Header.tsx'
+import Mechanics from '../components/Mechanics.tsx'
+import Footer from '../components/Footer.tsx'
+import Characters from '../components/Characters.tsx'
+import Navbar from '../components/Navbar.tsx'
 
-import type {mechanic} from './components/Mechanics.tsx'
-import type {character} from './components/Characters.tsx'
-import style from './style.module.css'
+import type {mechanic} from '../components/Mechanics.tsx'
+import type {character} from '../components/Characters.tsx'
+import style from '../style.module.css'
 
 function App() {
   const mechanicList : mechanic[] = [
