@@ -33,7 +33,7 @@ function Devlog() {
             </div>
             <div>
                 {
-                posts.map((post) => (
+                [...posts].reverse().map((post) => (
                     <Post key={post.id} PostData={post} />
                 ))
                 }
