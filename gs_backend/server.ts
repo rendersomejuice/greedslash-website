@@ -9,29 +9,20 @@ app.use(express.json());
 const db = new Database('blog.db');
 
 // Crear tabla al arrancar
-db.prepare('CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY AUTOINCREMENT, titulo TEXT, contenido TEXT)').run();
+db.prepare('CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, body TEXT, date TEXT DEFAULT CURRENT_TIMESTAMP)').run();
 
-interface Post { id?: number; titulo: string; contenido: string; }
+interface Post { id?: number; title: string; body: string; }
 
-// Enpoints del Blog
+// Enpoints
 app.get('/api/posts', (req: Request, res: Response) => {
   const posts = db.prepare('SELECT * FROM posts').all() as Post[];
   res.json(posts);
 });
 
 app.post('/api/posts', (req: Request<{}, {}, Post>, res: Response) => {
-  const { titulo, contenido } = req.body;
-  const info = db.prepare('INSERT INTO posts (titulo, contenido) VALUES (?, ?)').run(titulo, contenido);
-  res.status(201).json({ id: Number(info.lastInsertRowid), titulo, contenido });
-});
-
-// JSONs Estáticos directos
-app.get('/api/config', (req: Request, res: Response) => {
-  res.json({ nombreWeb: "Mi Blog", version: "1.0.0" });
-});
-
-app.get('/api/autor', (req: Request, res: Response) => {
-  res.json({ nombre: "Carlos Dev", rol: "Fullstack" });
+  const { title, body } = req.body;
+  const info = db.prepare('INSERT INTO posts (title, body) VALUES (?, ?)').run(title, body);
+  res.status(201).json({ id: Number(info.lastInsertRowid), title, body });
 });
 
 app.listen(3000, () => console.log('🚀 Servidor listo en http://localhost:3000'));

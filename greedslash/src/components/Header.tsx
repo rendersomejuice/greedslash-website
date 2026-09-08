@@ -1,4 +1,5 @@
 import style from '../style.module.css'
+import { FaSteam } from 'react-icons/fa';
 
 function Header(){
 
@@ -11,9 +12,12 @@ function Header(){
             <div className={style.textBox}>
                 <p>Fast-paced stylized sword fighting game where timing and prediction decide every duel. Mirror your opponent’s attacks with precision parries and finish them with brutal cinematic finishers. Easy to learn, hard to master.</p>
             </div>
-            <div className={style.horizontalLayout}>
-                <a className={style.wishListButton} target="_blank" href="steam://store/4521520">WISHLIST</a>
-                <a className={style.wishListButton} target="_blank" href="steam://store/4839830">PLAY DEMO</a>
+            <div className={style.steamContainer}>
+                <div className={style.horizontalLayout}>
+                    <FaSteam className={style.steamLogo}> size={200}</FaSteam>
+                    <a className={style.wishListButton} target="_blank" href="steam://store/4521520">WISHLIST</a>
+                    <a className={style.wishListButton} target="_blank" href="steam://store/4839830">PLAY DEMO</a>
+                </div>
             </div>
         </div>
     )

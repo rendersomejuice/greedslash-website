@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Youtube from '@tiptap/extension-youtube';
@@ -29,6 +31,12 @@ function TiptapEditor({body, setBody}){
         editor.commands.setYoutubeVideo({ src: url });
     }
     };
+
+    useEffect(() => {
+        if (editor && editor.getHTML() !== body) {
+            editor.commands.setContent(body);
+        }
+    }, [body, editor]);
 
     return(
         <div>

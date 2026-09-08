@@ -159,3 +159,19 @@
     text-decoration: none;
     color: black;
 }
+
+.steamContainer{
+    background: #171a21;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 90px;
+    border: solid #162332;
+    box-shadow: 3px 6px 1px #162332;
+}
+.steamLogo{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-69px, 10px);
+    color: ghostwhite;
+}
