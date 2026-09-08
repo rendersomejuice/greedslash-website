@@ -12,8 +12,11 @@ import type {PostData} from '../components/Post.tsx'
 function Devlog() {
 
     const logoUrl:string = "./public/LOGO.png"; 
-
     const [posts, setPosts] = useState<PostData[]>([])
+
+    const handleDeletePost = (idDeleted: number) => {
+        setPosts((prevPosts) => prevPosts.filter(post => post.id !== idDeleted));
+    };
 
     useEffect(() => {
         fetch('http://localhost:3000/api/posts')
@@ -34,7 +37,7 @@ function Devlog() {
             <div>
                 {
                 [...posts].reverse().map((post) => (
-                    <Post key={post.id} PostData={post} />
+                    <Post key={post.id} PostData={post} onPostDeleted={handleDeletePost} isDeletable={true} />
                 ))
                 }
             </div>

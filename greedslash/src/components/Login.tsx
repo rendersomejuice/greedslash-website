@@ -1,9 +1,10 @@
 import {useState} from 'react'
+import { useAuth } from '../components/AuthProvider';
 
-function Login ({ onLoginSuccess }: {onLoginSuccess: () => void}){
+function Login (){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
+    const { login } = useAuth();
     const HandleSubmit = async (e: React.SubmitEvent) => {
         e.preventDefault();
         try{
@@ -19,7 +20,7 @@ function Login ({ onLoginSuccess }: {onLoginSuccess: () => void}){
             if (!response.ok) {
                 throw new Error(data.error || 'Invalid credentials');
             }
-            onLoginSuccess();
+            login();
         }catch(error){
             console.error(error);
         }

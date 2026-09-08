@@ -3,19 +3,16 @@ import { useState } from 'react';
 import Post from './components/Post'
 import TiptapEditor from './components/TiptapEditor.jsx'
 import Login from './components/Login';
+import { useAuth } from './components/AuthProvider';
 
 import './App.css'
 import style from './style.module.css'
 
 function AdminPanel () {
+    const { isLoggedIn } = useAuth();
+
     const [body, setBody] = useState<string>('');
     const [title, setTitle] = useState<string>('');
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(!!localStorage.getItem('adminLoggedIn'));
-
-    const handleLoginSuccess = () => {
-        localStorage.setItem('adminLoggedIn', 'true'); // Esto es solo estético para no perder la pantalla al recargar
-        setIsLoggedIn(true);
-    };
 
     const sendPost = async () => {
         try{
@@ -25,6 +22,7 @@ function AdminPanel () {
                 body: JSON.stringify({title, body}),
                 credentials: 'include'
             });
+
             if(!response.ok){ throw new Error('Error sending data'); }
             const res = await response.json();
             console.log('Server response:', res);
@@ -36,7 +34,7 @@ function AdminPanel () {
     };
 
     if (!isLoggedIn) {
-        return <Login onLoginSuccess={handleLoginSuccess} />;
+        return <Login/>;
     }
 
     return  <div>
@@ -53,8 +51,9 @@ function AdminPanel () {
                 <div className={style.horizontalLayout}>
                     <button className={style.wishListButton} onClick={sendPost}>POST</button>
                 </div>
+                <div className="ClockContainer"><h1>PREVIEW</h1></div>
                 <div>
-                    <Post PostData={{title:title, body:body, date:Date.now()}}></Post>
+                    <Post isDeletable={false} PostData={{title:title, body:body, date:Date.now()}}></Post>
                 </div>
             </div>  
 }

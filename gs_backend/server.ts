@@ -56,7 +56,18 @@ app.post('/api/login', async (req: Request, res: Response) => {
   res.status(401).json({ error: 'Invalid username or password.' });
 });
 
+app.delete('/api/delete', authenticateToken, (req: Request, res : Response) => {
+  const {id} = req.body;
+  const info = db.prepare('DELETE FROM posts WHERE id = ?').run(id);
+  res.status(201).json({id: Number(id)});
+});
+
 // Enpoints
+
+app.get('/api/auth/status', (req, res) => {
+    res.status(200).json({ authenticated: true });
+});
+
 app.get('/api/posts', (req: Request, res: Response) => {
   const posts = db.prepare('SELECT * FROM posts').all() as Post[];
   res.json(posts);
