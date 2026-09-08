@@ -7,9 +7,6 @@ import Login from './components/Login';
 import './App.css'
 import style from './style.module.css'
 
-const serverURL = 'http://localhost:3000'
-
-
 function AdminPanel () {
     const [body, setBody] = useState<string>('');
     const [title, setTitle] = useState<string>('');
@@ -22,7 +19,7 @@ function AdminPanel () {
 
     const sendPost = async () => {
         try{
-            const response = await fetch(`${serverURL}/api/posts`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/posts`,{
                 method: 'POST',
                 headers: {'Content-Type' : 'application/json'},
                 body: JSON.stringify({title, body}),

@@ -1,19 +1,13 @@
 import {useState} from 'react'
 
-const serverURL = 'http://localhost:3000'
-
-interface LoginProps {
-    onLoginSuccess: () => void; 
-}
-
-function Login ({ onLoginSuccess }: (LoginProps)){
+function Login ({ onLoginSuccess }: {onLoginSuccess: () => void}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const HandleSubmit = async (e: React.SubmitEvent) => {
         e.preventDefault();
         try{
-            const response = await fetch(`${serverURL}/api/login`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`,{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({username, password}),

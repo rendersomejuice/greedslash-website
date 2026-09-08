@@ -27,7 +27,7 @@ function Devlog() {
     return (
         <>
             <Navbar></Navbar>
-            <img className={style.headerLogo} src={logoUrl}></img>
+            <img style={{marginBottom: '-128px'}} className={style.headerLogo} src={logoUrl}></img>
             <div className="titleContainer">
                 <h1>DEVLOG</h1>
             </div>
