@@ -44,11 +44,18 @@
     text-align: center;
     margin-top: 30px;
 }
+@media(max-width:550px){
+    .textBox{
+        font-size:0.9rem;
+        width: 80%;
+    }
+}
 .MechanicContainer{
     width: 600px;
     margin: 0 auto;
 }
 .panelContainer{
+    max-width: 100%;
     width: 600px;
     margin: 0 auto;
     position: relative;
@@ -61,6 +68,14 @@
     transform: translate(-5%, 10%);
     text-align: left;
 }
+
+@media(max-width:550px){
+    .mechanicShortDescription{
+        font-size:0.7rem;
+        top: 82%;
+    }
+}
+
 .footer{
     text-decoration: none;
 }
@@ -75,19 +90,29 @@
 }
 
 .characterContainer{
-    width: 600px;
-    overflow: hidden;
+    position: relative;
+    width: 80%;                  
+    max-width: 600px;           
+    aspect-ratio: 600 / 650; 
     margin: 0 auto;
     margin-bottom: 50px;
     background: #3b5347;
-    height: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 7px 7px 0 black;
     border: solid 3px black;
     border-top-right-radius: 45px;
+    box-sizing: border-box; 
 }
+
+@media(max-width:550px){
+    .characterContainer{
+        width: 300px;
+        height: 325px;
+    }
+}
+
 .characterImg{
     width: 100%;
 }
@@ -128,12 +153,14 @@
     padding: 10px;
 }
 
-.characterButtonsContainer{
+.characterButtonsContainer {
     position: absolute;
-    transform: translate(280px, 10px);
+    top: 190px;
+    right: -53px;
     display: grid;
     gap: 4px;
     color: white;
+    z-index: 10;          
 }
 
 .characterButton{
@@ -145,6 +172,25 @@
     text-align: center;
     background: #276746;
     box-shadow: 7px 7px 0 black;
+}
+
+@media(max-width:550px){
+    .characterButton{
+        width: 50px;
+        padding:10px;
+    }
+    .characterButtonsContainer{
+        right: -24px;
+    }
+    .charName{
+        font-size:0.7rem;
+    }
+    .charAttr{
+        font-size: 0.7rem;
+    }
+    .attrContainer{
+        margin-top: -74px;
+    }
 }
 
 .characterButton:hover{
@@ -179,6 +225,12 @@
     color: black;
 }
 
+@media(max-width: 500px){
+    .NavbarContainer > div > a{
+        font-size: 0.8rem;
+    }
+}
+
 .NavbarContainer > div > a:hover {
     font-size:1.1em;
 }
@@ -190,6 +242,7 @@
     border-radius: 90px;
     border: solid #162332;
     box-shadow: 3px 6px 1px #162332;
+    max-width: 95%;
 }
 .steamLogo{
     width: 50px;
@@ -197,4 +250,15 @@
     position: absolute;
     transform: translate(-69px, 10px);
     color: ghostwhite;
+}
+
+@media(max-width:550px){
+    .wishListButton{
+        padding:10px;
+    }
+    .steamLogo{
+        width: 40px;
+        height: 40px;
+        transform: translate(-50px, 5px);
+    }
 }
