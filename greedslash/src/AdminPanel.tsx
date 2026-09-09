@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Post from './components/Post'
-import TiptapEditor from './components/TiptapEditor.jsx'
+import TiptapEditor from './components/TiptapEditor'
 import Login from './components/Login';
 import { useAuth } from './components/AuthProvider';
 

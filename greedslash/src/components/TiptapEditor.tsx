@@ -6,7 +6,12 @@ import Youtube from '@tiptap/extension-youtube';
 
 import '../App.css'
 
-function TiptapEditor({body, setBody}){
+interface TiptapEditorProps {
+    body: string;
+    setBody: (html: string) => void;
+}
+
+function TiptapEditor({body, setBody}: TiptapEditorProps){
 
     // Configuración limpia del editor
     const editor = useEditor({
