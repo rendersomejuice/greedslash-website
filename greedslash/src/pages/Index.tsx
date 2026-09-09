@@ -13,22 +13,22 @@ function App() {
   const mechanicList : mechanic[] = [
     {
       title: "Overhead",
-      gif: "./public/overhead.gif",
+      gif: "./overhead.gif",
       description: "Heavy hit from above"
     },
     {
       title: "Swing",
-      gif: "./public/swing.gif",
+      gif: "./swing.gif",
       description: "Side to side cut"
     },
     {
       title: "Thrust",
-      gif: "./public/thrust.gif",
+      gif: "./thrust.gif",
       description: "Frontal cut"
     },
     {
       title: "Kick",
-      gif: "./public/kick.gif",
+      gif: "./kick.gif",
       description: "Guard breaking hit"
     }
   ];
@@ -36,12 +36,12 @@ function App() {
   const parryList : mechanic[] = [
     {
       title: "Parry",
-      gif: "./public/normalparry.gif",
+      gif: "./normalparry.gif",
       description: "Blocks any attack except the kick"
     },
     {
       title: "Mirror Parry",
-      gif: "./public/mirrorparry.gif",
+      gif: "./mirrorparry.gif",
       description: "Grants attack speed boost"
     }
   ];
@@ -49,17 +49,17 @@ function App() {
   const finisherList : mechanic[] = [
     {
       title: "Decapitation",
-      gif: "./public/decapitation.gif",
+      gif: "./decapitation.gif",
       description: "Hit your opponent in the head"
     },
     {
       title: "Finisher",
-      gif: "./public/finisher.gif",
+      gif: "./finisher.gif",
       description: "When health hits 0%"
     },
     {
       title: "Special",
-      gif: "./public/special.gif",
+      gif: "./special.gif",
       description: "Needs the special bar to be full"
     }
   ];

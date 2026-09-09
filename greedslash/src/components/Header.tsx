@@ -3,7 +3,7 @@ import { FaSteam } from 'react-icons/fa';
 
 function Header(){
 
-    const logoUrl:string = "./public/LOGO.png";
+    const logoUrl:string = "./LOGO.png";
 
     return(
         <div>
