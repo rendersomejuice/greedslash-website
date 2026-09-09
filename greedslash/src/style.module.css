@@ -21,6 +21,11 @@
     border: solid 4px black;
     text-shadow: 0.3px 0.3px 0.3px #161616;
 }
+.wishListButton:hover{
+    box-shadow: 0px 0px 0 black;
+    background: linear-gradient(90deg, #09f109, #1d9847);
+    transform: translate(2px, 2px);
+}
 
 .horizontalLayout{
     width: fit-content;
@@ -142,6 +147,12 @@
     box-shadow: 7px 7px 0 black;
 }
 
+.characterButton:hover{
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    background:#178f51;
+}
+
 .NavbarContainer{
     width: 100%;
     background: #ae9e00;
@@ -151,13 +162,25 @@
     align-items: center;
 }
 .NavbarContainer > div{
-    width: 200px;   
+    width: 200px;
     text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavbarContainer > div:hover{
+    background: linear-gradient(81deg, transparent, #d685f331, transparent);
 }
 
 .NavbarContainer > div > a {
     text-decoration: none;
     color: black;
+}
+
+.NavbarContainer > div > a:hover {
+    font-size:1.1em;
 }
 
 .steamContainer{
