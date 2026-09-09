@@ -172,6 +172,7 @@
     text-align: center;
     background: #276746;
     box-shadow: 7px 7px 0 black;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @media(max-width:550px){
@@ -193,7 +194,15 @@
     }
 }
 
-.characterButton:hover{
+@media (hover: hover) {
+    .characterButton:hover{
+        transform: translate(2px, 2px);
+        box-shadow: none;
+        background:#178f51;
+    }
+}
+
+.characterButton:active{
     transform: translate(2px, 2px);
     box-shadow: none;
     background:#178f51;
