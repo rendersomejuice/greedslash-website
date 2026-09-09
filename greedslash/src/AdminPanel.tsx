@@ -9,7 +9,7 @@ import './App.css'
 import style from './style.module.css'
 
 function AdminPanel () {
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, isLoading  } = useAuth();
 
     const [body, setBody] = useState<string>('');
     const [title, setTitle] = useState<string>('');
@@ -32,6 +32,10 @@ function AdminPanel () {
             console.error('Error sending post:', error);
         }
     };
+
+    if (isLoading) {
+        return <div>Loading session...</div>;
+    }
 
     if (!isLoggedIn) {
         return <Login/>;
