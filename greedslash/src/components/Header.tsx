@@ -27,8 +27,8 @@ function Header(){
             <div className={style.steamContainer}>
                 <div className={style.horizontalLayout}>
                     <FaSteam className={style.steamLogo}> size={200}</FaSteam>
-                    <a className={style.wishListButton} target="_blank" href={isMobileDevice?urlMobile:urlPC + "4521520"}>WISHLIST</a>
-                    <a className={style.wishListButton} target="_blank" href={isMobileDevice?urlMobile:urlPC + "4839830"}>PLAY DEMO</a>
+                    <a className={style.wishListButton} target="_blank" href={(isMobileDevice?urlMobile : urlPC) + "4521520"}>WISHLIST</a>
+                    <a className={style.wishListButton} target="_blank" href={(isMobileDevice?urlMobile : urlPC) + "4839830"}>PLAY DEMO</a>
                 </div>
             </div>
         </div>
