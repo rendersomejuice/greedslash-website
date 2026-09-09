@@ -215,10 +215,9 @@
     align-items: center;
     justify-content: center;
 }
-@media (hover: hover) {
-    .NavbarContainer > div:hover{
-        background: linear-gradient(81deg, transparent, #d685f331, transparent);
-    }
+
+.NavbarContainer > div:hover{
+    background: linear-gradient(81deg, transparent, #d685f331, transparent);
 }
 
 .NavbarContainer > div > a {
@@ -232,8 +231,10 @@
     }
 }
 
-.NavbarContainer > div > a:hover {
-    font-size:1.1em;
+@media (hover: hover) {
+    .NavbarContainer > div > a:hover {
+        font-size:1.1em;
+    }
 }
 
 .steamContainer{
