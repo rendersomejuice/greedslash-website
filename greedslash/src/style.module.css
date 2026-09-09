@@ -215,9 +215,10 @@
     align-items: center;
     justify-content: center;
 }
-
-.NavbarContainer > div:hover{
-    background: linear-gradient(81deg, transparent, #d685f331, transparent);
+@media (hover: hover) {
+    .NavbarContainer > div:hover{
+        background: linear-gradient(81deg, transparent, #d685f331, transparent);
+    }
 }
 
 .NavbarContainer > div > a {

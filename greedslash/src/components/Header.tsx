@@ -1,9 +1,21 @@
 import style from '../style.module.css'
+import {useState, useEffect} from 'react'
 import { FaSteam } from 'react-icons/fa';
 
 function Header(){
 
     const logoUrl:string = "./LOGO.png";
+    const urlPC = "steam://store/";
+    const urlMobile = "https://store.steampowered.com/app/";
+
+    const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+    useEffect(() => {
+        const userAgent = navigator.userAgent || navigator.vendor
+        const checkMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+        
+        setIsMobileDevice(checkMobile);
+    }, []);
 
     return(
         <div>
@@ -15,8 +27,8 @@ function Header(){
             <div className={style.steamContainer}>
                 <div className={style.horizontalLayout}>
                     <FaSteam className={style.steamLogo}> size={200}</FaSteam>
-                    <a className={style.wishListButton} target="_blank" href="steam://store/4521520">WISHLIST</a>
-                    <a className={style.wishListButton} target="_blank" href="steam://store/4839830">PLAY DEMO</a>
+                    <a className={style.wishListButton} target="_blank" href={isMobileDevice?urlMobile:urlPC + "4521520"}>WISHLIST</a>
+                    <a className={style.wishListButton} target="_blank" href={isMobileDevice?urlMobile:urlPC + "4839830"}>PLAY DEMO</a>
                 </div>
             </div>
         </div>
