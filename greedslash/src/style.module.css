@@ -21,11 +21,19 @@
     border: solid 4px black;
     text-shadow: 0.3px 0.3px 0.3px #161616;
 }
-.wishListButton:hover{
-    box-shadow: 0px 0px 0 black;
-    background: linear-gradient(90deg, #09f109, #1d9847);
-    transform: translate(2px, 2px);
+@media(hover:hover){
+    .wishListButton:hover{
+        box-shadow: 0px 0px 0 black;
+        background: linear-gradient(90deg, #09f109, #1d9847);
+        transform: translate(2px, 2px);
+    }
 }
+
+.wishListButton:active{
+        box-shadow: 0px 0px 0 black;
+        background: linear-gradient(90deg, #09f109, #1d9847);
+        transform: translate(2px, 2px);
+    }
 
 .horizontalLayout{
     width: fit-content;
