@@ -11,7 +11,7 @@ import type {PostData} from '../components/Post.tsx'
 
 function Devlog() {
 
-    const logoUrl:string = "./public/LOGO.png"; 
+    const logoUrl:string = "./LOGO.png"; 
     const [posts, setPosts] = useState<PostData[]>([])
 
     const handleDeletePost = (idDeleted: number) => {
@@ -19,7 +19,7 @@ function Devlog() {
     };
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/posts')
+        fetch('/api/posts')
         .then( (response) => response.json() )
         .then( (data) => {
             setPosts(data);

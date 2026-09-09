@@ -8,7 +8,7 @@ function Login (){
     const HandleSubmit = async (e: React.SubmitEvent) => {
         e.preventDefault();
         try{
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`,{
+            const response = await fetch('/api/login',{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({username, password}),

@@ -20,7 +20,7 @@ function Post({PostData, onPostDeleted, isDeletable} : PostProps){
 
     const DeletePost = async (id:number) =>{
         try{
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/delete`,{
+            const response = await fetch(`/api/delete`,{
                 method: 'DELETE',
                 headers: {'Content-Type' : 'application/json'},
                 body: JSON.stringify({id}),
