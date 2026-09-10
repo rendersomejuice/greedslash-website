@@ -16,10 +16,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     useEffect(() => {
         const verifySession = async () => {
-            if (!localStorage.getItem('adminLoggedIn')) {
+            /*if (!localStorage.getItem('adminLoggedIn')) {
                 setIsLoading(false);
                 return;
-            }
+            }*/
             try {
                 const response = await fetch('/api/auth/status', {
                     method: 'GET',
