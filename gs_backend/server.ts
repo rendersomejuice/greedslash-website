@@ -55,10 +55,10 @@ app.post('/api/login', async (req: Request, res: Response) => {
     const token = jwt.sign({ user: username }, JWT_SECRET, { expiresIn: '2h' });
 
     res.cookie('adminToken', token, {
-      httpOnly: true,    // Protege contra ataques XSS (JavaScript no puede leerla)
-      secure: false,     // Ponlo en 'true' cuando subas tu web a producción con HTTPS
-      sameSite: 'lax',   // Protege contra ataques CSRF
-      maxAge: 7200000    // Duración de 2 horas en milisegundos
+      httpOnly: true,    
+      secure: true,     
+      sameSite: 'lax',   
+      maxAge: 7200000    
     });
     return res.json({ success: true });
   }
