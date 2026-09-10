@@ -29,9 +29,19 @@ const authenticateToken = (req: Request, res: Response, next: Function) => {
   if (!token) return res.status(401).json({ error: 'Access denied.' });
 
   jwt.verify(token, JWT_SECRET, (err: any) => {
-    if (err) return res.status(403).json({ error: 'Invalid or expired token.' });
+    if (err){
+        res.clearCookie('adminToken');
+        return res.status(403).json({ error: 'Invalid or expired token.' });
+    }
     next();
   });
+};
+
+const noCache = (req: Request, res: Response, next: Function) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  next();
 };
 
 interface Post { id?: number; title: string; body: string; }
@@ -64,7 +74,7 @@ app.delete('/api/delete', authenticateToken, (req: Request, res : Response) => {
 
 // Enpoints
 
-app.get('/api/auth/status', (req, res) => {
+app.get('/api/auth/status',noCache,authenticateToken, (req, res) => {
     res.status(200).json({ authenticated: true });
 });
 
